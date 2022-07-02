@@ -14,12 +14,12 @@ int (*get_func(char conv_spec))(va_list, int)
 		{'s', print_str},
 		{'d', print_dec},
 		{'i', print_dec},
-		{NULL, NULL}
+		{'\0', NULL}
 	};
 
 	for (i = 0; get_type[i].form_match != conv_spec; i++)
 	{
-		if (get_type[i].form_match == NULL)
+		if (get_type[i].form_match == '\0')
 			return (NULL);
 	}
 		return (get_type[i].func);

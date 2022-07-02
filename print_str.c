@@ -10,7 +10,8 @@
 
 int print_str(va_list ap, int count)
 {
-	char *c = va_arg(ap, int);
+	char *c = va_arg(ap, char*);
+	int i;
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
