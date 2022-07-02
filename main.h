@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 int _printf(const char *format, ...);
 int (*get_func(char conv_spec))(va_list, int);

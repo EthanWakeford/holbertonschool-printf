@@ -11,11 +11,11 @@ int print_char(va_list ap, int count)
 {
 	char c = va_arg(ap, int);
 
-	(write(1, &c, 1));
-	if (c == '\0')
+	if (sizeof(c) != 1)
 	{
 		count = -1;
 		return (count);
 	}
-	return (1);
+	(write(1, &c, 1));
+	return (count += 1);
 }
