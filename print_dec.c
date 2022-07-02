@@ -10,9 +10,22 @@
 int print_dec(va_list ap, int count)
 {
 	int c = va_arg(ap, int);
+	int last;
 
-	dec_print(c);
-	return (count += int_len(c));
+	count += int_len(c);
+	if (c < 0)
+	{
+		_putchar('-');
+		last = -1 * (c % 10);
+		c = -1 * (c / 10);
+		count++;
+		if (c != 0)
+			dec_print(c);
+		_putchar('0' + last);
+	}
+	else
+		dec_print(c);
+	return (count);
 }
 
 /**
@@ -23,11 +36,6 @@ int print_dec(va_list ap, int count)
 
 int dec_print(int c)
 {
-	if (c < 0)
-	{
-		_putchar('-');
-		c = -c;
-	}
 	if (c > 9)
 	{
 		int a = c / 10;

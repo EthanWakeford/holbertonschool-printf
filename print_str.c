@@ -13,11 +13,11 @@ int print_str(va_list ap, int count)
 	char *c = va_arg(ap, char*);
 	int i;
 
-	if ( c == NULL)
+	if (c == NULL)
 	{
 		c = "(null)";
 	}
-	if (sizeof*(c) != 8)
+	if (sizeof *(c) != 8)
 	{
 		count = -1;
 		return (count);
