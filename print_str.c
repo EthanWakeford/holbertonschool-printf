@@ -2,18 +2,24 @@
 
 /**
  * print_str - returns a string
- * @c: pointer to string to be printed
- * Return: string
+ * @ap: string to be printed
+ * @count: total count of _printF
+ * Return: total count plus length of the string,
+ * if string is NULL return -1.
  */
 
-int print_str(char *c)
+int print_str(va_list ap, int count)
 {
-	int i;
+	char *c = va_arg(ap, int);
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
 	(write(1, &c[i], 1));
 	}
-
-	return (stringlength(c));
+	if (c == NULL)
+	{
+		count = -1;
+		return (count);
+	}
+	return (count += stringlength(c));
 }
