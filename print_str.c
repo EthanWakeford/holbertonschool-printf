@@ -10,17 +10,13 @@
 
 int print_str(va_list ap, int count)
 {
-	char *c = va_arg(ap, char*);
+	char *c;
 	int i;
 
+	c = va_arg(ap, char*);
 	if (c == NULL)
 	{
 		c = "(null)";
-	}
-	if (sizeof *(c) != 8)
-	{
-		count = -1;
-		return (count);
 	}
 	for (i = 0; c[i] != '\0'; i++)
 	{

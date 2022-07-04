@@ -9,13 +9,9 @@
 
 int print_char(va_list ap, int count)
 {
-	char c = va_arg(ap, int);
+	char c;
 
-	if (sizeof(c) != 1)
-	{
-		count = -1;
-		return (count);
-	}
+	c = (char)va_arg(ap, int);
 	(write(1, &c, 1));
 	return (count += 1);
 }

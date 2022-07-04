@@ -12,6 +12,8 @@ int print_dec(va_list ap, int count)
 	int c = va_arg(ap, int);
 	int last;
 
+	if (!c)
+		return (count);
 	count += int_len(c);
 	if (c < 0)
 	{

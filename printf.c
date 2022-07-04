@@ -60,5 +60,6 @@ int _printf(const char *format, ...)
 		if (count == -1)
 			return (count);
 	}
+	va_end(ap);
 	return (count);
 }
