@@ -17,6 +17,8 @@ int (*get_func(char conv_spec))(va_list, int)
 		{'\0', NULL}
 	};
 
+	if (!conv_spec)
+		exit(100);
 	for (i = 0; get_type[i].form_match != conv_spec; i++)
 	{
 		if (get_type[i].form_match == '\0')
@@ -37,9 +39,10 @@ int _printf(const char *format, ...)
 	int i, count = 0;
 	int (*print)(va_list, int);
 
+	
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 	va_start(ap, format);
-	if (format == NULL)
-		exit(99);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
