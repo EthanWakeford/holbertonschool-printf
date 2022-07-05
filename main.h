@@ -16,6 +16,8 @@ int print_dec(va_list ap, int count);
 int dec_print(int c);
 int int_len(int c);
 int _putchar(char c);
+int bin_recurse(unsigned int b, int count);
+int print_bin(va_list ap, int count);
 
 /**
 *struct type - matches format specifier and function pointer

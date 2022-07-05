@@ -14,6 +14,7 @@ int (*get_func(char conv_spec))(va_list, int)
 		{'s', print_str},
 		{'d', print_dec},
 		{'i', print_dec},
+		{'b', print_bin},
 		{'\0', NULL}
 	};
 
