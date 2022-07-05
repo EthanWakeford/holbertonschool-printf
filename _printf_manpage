@@ -1,0 +1,43 @@
+.TH _printf 3 "July 05 2022" "Holberton School"
+.B NAME
+.Sh _printf - format and print data.
+.Sh SYNOPSIS
+.B _printf [format] [argument]
+.sp
+.SH DESCRIPTION
+.B The _printf function takes a constant 
+.I 'char *format'
+.B , and takes the arguments contained in it to print them to standard format, the count of the total characters printed is returned, a -1 is returned on failure.
+.sp
+.B Format string
+Formats what you want to print out and contains format specifiers to distinguish what you want to print out.
+.sp
+.B Struct data type: Specifier
+
+.sp
+Specify the data type of the variable that its going to be printed with a preceding '%' character. The following characters specify the type of data to be formatted.
+
+.sp
+.B %i, %d
+- Prints signed intergers to the standard output.
+.sp
+.B %c
+- Prints a single character to the standard output.
+.sp
+.B %s
+- Prints a string to standard output.
+.sp
+.B % 
+- Will print a % to the standard output.
+.sp
+.SH Example
+.sp
+.B _printf("This is a formatted string %s. Followed by a char %c, and two ints %d, %i.", "I am the string", 'A', 2, 27)
+.sp
+.I Produces:
+.B This is a formatted string I am the string. Followed by a char A, and two ints 2, 27.
+.sp
+.SH BUGS
+No known bugs as of publication. 
+.SH AUTHORS
+.B Jacob Marshall and Ethan Wakeford.
