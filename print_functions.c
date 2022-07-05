@@ -59,8 +59,6 @@ int print_char(va_list ap, int count)
 	char c;
 
 	c = (char)va_arg(ap, int);
-	if (!c)
-		exit(98);
 	(write(1, &c, 1));
 	return (count += 1);
 }
